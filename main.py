@@ -1,55 +1,86 @@
-from Animal import Animal
-from Bird import Bird
-from Dog import Dog
+class Musician:
 
-# Creating an Animal Object
-animal_1 = Animal()
+    def play(self):
+        print("The musician plays music...")
+        return self
 
-# Creating a Bird Object that will inherit class variables and class methods from the Parent Class.
-bird_1 = Bird(True, False, "Owl", "Male", "Blue", "Happy")
+    def gesture(self):
+        print("The musician takes a bow in front of the audience...")
+        return self
 
-# Creating a Dog Object that will inherit class variables and class methods from the Parent Class.
-dog_1 = Dog("Boxer", "Female", "Brown", "Floppy", "Cranky")
+    def practice(self):
+        print("The musician practices his music...")
+        return self
 
-# Accessing the Animal Class Variable using all three objects.
-# Notice that the child class objects (bird and dog) can access the animal Class Variable.
-print("Accessing the Animal Class Variable using all three objects:")
-print(animal_1.alive)
-print(bird_1.alive)
-print(dog_1.alive)
-print("\n")
+    def teach(self):
+        print("The musician teaches his music...")
+        return self
 
-# Animal object using its methods
-print("Animal object using its methods:")
-animal_1.play()
-animal_1.eat()
-animal_1.sleep()
-print("\n")
+    def buys_equitment(self):
+        print("The musician buys new musical equipment...")
+        return self
 
-# Bird object accessing its parent (Animal) methods
-print("Bird object accessing its parent (Animal) methods:")
-bird_1.play()
-bird_1.eat()
-bird_1.sleep()
-print("\n")
 
-# Dog object accessing its parent (Animal) methods
-print("Dog object accessing its parent (Animal) methods:")
-dog_1.play()
-dog_1.eat()
-dog_1.sleep()
-print("\n")
+class Guitarist(Musician):
 
-# Bird object accessing its specific object methods.
-print("Bird object accessing its specific object methods:")
-bird_1.fly()
-bird_1.peck()
-bird_1.tweet()
-print("\n")
+    def play(self):
 
-# Dog object accessing its specific object methods.
-print("\n")
-dog_1.bark()
-dog_1.wag_tail()
-dog_1.pant()
-print("\n")
+        print("The guitarist does a guitar solo...")
+        return self
+
+    def gesture(self):
+        print("The guitarist dives into the crowd...")
+        return self
+
+
+class Bassist(Musician):
+
+    def play(self):
+        print("The bassist slaps his bass...")
+        return self
+
+    def gesture(self):
+        print("The bassist is headbanging...")
+        return self
+
+
+class Drummer(Musician):
+
+    def play(self):
+        print("The drummer smashes his drums to the beat...")
+        return self
+
+    def gesture(self):
+        print("The drummer spins his guitar stick...")
+        return self
+
+
+musician_1 = Musician()
+
+guitarist_1 = Guitarist()
+bassist_1 = Bassist()
+drummer_1 = Drummer()
+
+musician_1.play()
+musician_1.gesture()
+
+guitarist_1.play()
+guitarist_1.gesture()
+
+bassist_1.play()
+bassist_1.gesture()
+
+drummer_1.play()
+drummer_1.gesture()
+
+musician_1.play().gesture().teach().practice().buys_equitment()
+guitarist_1.play().gesture().teach().practice().buys_equitment()
+bassist_1.play().gesture().teach().practice().buys_equitment()
+drummer_1.play().gesture().teach().practice().buys_equitment()
+
+
+musician_1.play()\
+        .practice()\
+        .teach()\
+        .gesture()\
+        .buys_equitment()
